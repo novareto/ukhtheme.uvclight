@@ -1,0 +1,23 @@
+<div id="user-actions" tal:condition="len(manager.viewlets)">
+  <div class="navbar">
+    <nav role="navigation">
+      <div id="navbar-login">
+	<ul class="nav">
+	  <li class="dropdown">
+	    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+	      <span class="glyphicon glyphicon-user" />
+	      <span tal:content="request.principal.id" />
+	      <b class="caret"></b>
+	    </a>
+	    <ul class="dropdown-menu">
+	      <li tal:repeat="viewlet manager.viewlets"
+		  tal:attributes="class getattr(viewlet, 'css', '')">
+		<tal:entry tal:replace="structure viewlet.render()" />
+	      </li>
+	    </ul>
+	  </li>
+	</ul>
+      </div>
+    </nav>
+  </div>
+</div>

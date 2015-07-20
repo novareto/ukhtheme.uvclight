@@ -1,0 +1,53 @@
+<div class="col-md-8 sitemap">
+  <h1>Sitemap</h1>
+  <div class="col-sm-12 divider">
+    <div class="col-md-4">
+      <h4>Entgeltnachweis</h4>
+      <ul class="list-unstyled">
+	<li><a href="">Entgeltnachweis erstellen</a></li>
+	<li><a href="">Stundung</a></li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h4>Unfälle</h4>
+      <ul class="list-unstyled">
+	<li><a href="">Unfallmeldung erstellen</a></li>
+	<li><a href="">Sammelunfallanzeigen</a></li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h4>Mitteilung</h4>
+      <ul class="list-unstyled">
+	<li><a href="">Mitteilung erstellen</a></li>
+	<li><a href="">Sammelunfallanzeigen</a></li>
+      </ul>
+    </div>
+  </div><!-- End: divider -->
+  <div class="col-sm-12 module-company divider">
+    <h1>Ihr Unternehmen - Stammdaten</h1>
+    <div class="">
+      <div class="col-md-4">
+	<h4>Versicherung</h4>
+	<ul class="list-unstyled">
+	  <li><a href="">Versicherungsstaus</a></li>
+	  <li><a href="">Befreiung Pflichtversicherung</a></li>
+	</ul>
+      </div>
+      <div class="col-md-4">
+	<h4>Betriebsdaten</h4>
+	<ul class="list-unstyled">
+	  <li><a href="">Verlegung des Betriebes</a></li>
+	  <li><a href="">Nachfolger übergeben</a></li>
+	  <li><a href="">Auflösung des Betriebes</a></li>
+	  <li><a href="">Rechtsform des Betriebes</a></li>
+	</ul>
+      </div>
+      <div class="col-md-4">
+	<h4>Bescheinigung</h4>
+	<ul class="list-unstyled">
+	  <li><a href="">Unbedenklichkeitsbescheinigung</a></li>
+	</ul>
+      </div>
+    </div>
+  </div>
+</div>

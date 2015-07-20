@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle"
+	      data-target="div#personalmenu-mobile"
+	      data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="glyphicon glyphicon-user"> </span>
+      </button>
+      <button class="navbar-toggle"
+	      data-target="div#navigation-mobile"
+	      data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="glyphicon glyphicon-align-justify"></span>
+      </button>
+    </div>
+
+    <div id="navigation-mobile" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav visible-xs" id="main-mobile-nav">
+        <tal:loop repeat="viewlet component.viewlets">
+        <li tal:attributes="class python: viewlet.selected and 'active' or ''">
+	  <a href="" tal:attributes="href viewlet.action"
+	     tal:content="structure viewlet.title"> </a>
+        </li>
+        </tal:loop>
+      </ul>
+    </div>
+
+    <div id="globalmenuviewlet" class="collapse navbar-collapse navbar-nav-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a tal:attributes="href request.script_name">
+          <span class="icon"/> Home</a>
+        </li>
+        <tal:loop repeat="viewlet component.viewlets"> 
+          <li tal:attributes="class viewlet.selected and 'active' or None">
+            <a href="" tal:attributes="href viewlet.action"
+	       tal:content="structure viewlet.title"> </a>
+          </li>
+        </tal:loop>
+      </ul>
+
+    </div>
+  </div>
+</nav>

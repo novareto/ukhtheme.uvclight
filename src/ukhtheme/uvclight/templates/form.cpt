@@ -1,0 +1,60 @@
+<form i18n:domain="dolmen.forms.base"
+      metal:define-macro="editformii" role="form" action="."
+      tal:attributes="action view.action_url;
+                      id view.htmlId();
+                      method view.formMethod;
+                      enctype view.enctype">
+
+  <h1 tal:condition="view.label" tal:content="view.label">Label</h1>
+  <p tal:condition="view.description"
+     tal:content="view.description">Description</p>
+
+  <p class="form-status"
+     tal:condition="view.status"
+     tal:content="view.status">Status</p>
+
+  <div tal:condition="view.errors and view.formErrors"
+       tal:repeat="error view.formErrors"
+       class="alert alert-danger">
+    <p tal:content="error.title" />
+  </div>
+
+  <div class="fields"
+       metal:define-macro="form-fieldset"
+       tal:condition="view.fieldWidgets">
+    <div tal:repeat="widget view.fieldWidgets"
+         tal:attributes="class widget.error and 'form-group has-error' or 'form-group'">
+      <label class="field-label control-label" for="#"
+             tal:attributes="for widget.htmlId()"
+             tal:content="widget.title"
+             tal:condition="widget.isVisible()">
+        Label
+      </label>
+      <span class="field-required"
+            i18n:translate=""
+            tal:condition="widget.required and widget.isVisible()"
+            > * </span>
+      <tal:description tal:condition="widget.description">
+        <span class="hilfe glyphicon glyphicon-question-sign"
+              data-placement="right" 
+              data-toggle="tooltip"
+              tal:attributes="data-original-title widget.description">
+        </span>
+      </tal:description>
+      <br />
+      <tal:widget metal:define-macro="field-inline"
+		  tal:content="structure widget.render()" />
+
+      <h1> CHAMP </h1>
+
+      <p tal:condition="widget.error"
+	 class="field-error help-block" tal:content="widget.error.title" />
+
+    </div>
+  </div>
+  
+  <div class="actions" tal:repeat="widget view.actionWidgets" tal:condition="view.actionWidgets">
+      <tal:widget metal:define-macro="action-inline" tal:content="structure widget.render()" />
+  </div>
+  
+</form>

@@ -1,0 +1,10 @@
+<div id="personalpreferences" class="pull-right hidden-xs" >
+  <ul class="nav navbar-nav hidden-xs">
+    <tal:actions repeat="action component.viewlets">
+      <li tal:attributes="class action.selected and 'active' or ''">
+	<a tal:replace="structure action.render()" />
+      </li>
+      <li class="divider-vertical" tal:condition="not repeat['action'].end">&nbsp;</li>
+    </tal:actions>
+  </ul>
+</div>
