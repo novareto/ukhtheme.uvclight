@@ -103,6 +103,10 @@ class PersonalMenuViewlet(MenuViewlet):
         menu.update()
         return menu.entries
 
+    @property
+    def menus(self):
+        return self.getPersonal()
+
 
 class DocumentActionsViewlet(MenuViewlet):
     uvclight.viewletmanager(managers.IAboveContent)
