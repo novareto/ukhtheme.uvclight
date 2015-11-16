@@ -86,8 +86,8 @@ class GlobalMenuViewlet(MenuViewlet):
 
     
 class PersonalMenuViewlet(MenuViewlet):
-    uvclight.viewletmanager(managers.IPageTop)
-    uvclight.order(20)
+    uvclight.viewletmanager(Navigation)
+    uvclight.order(40)
     menu = menus.PersonalMenu
     template = get_template('personalpreferencestemplate.cpt')
 
