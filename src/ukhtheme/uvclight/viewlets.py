@@ -60,7 +60,7 @@ class BGHeader(uvclight.Viewlet):
     uvclight.viewletmanager(managers.IPageTop)
     uvclight.order(30)
     template = get_template('bgheader.cpt')
-    
+
     def application_url(self):
         return self.view.application_url()
 
@@ -70,7 +70,7 @@ class ObjectActionMenuViewlet(MenuViewlet):
     uvclight.context(IContent)
     uvclight.order(10)
     menu = menus.ContextualActionsMenu
- 
+
 
 class AddMenuViewlet(MenuViewlet):
     uvclight.viewletmanager(managers.IAboveContent)
@@ -84,7 +84,7 @@ class GlobalMenuViewlet(MenuViewlet):
     uvclight.order(10)
     menu = menus.GlobalMenu
 
-    
+
 class PersonalMenuViewlet(MenuViewlet):
     uvclight.viewletmanager(Navigation)
     uvclight.order(40)
@@ -156,7 +156,13 @@ class FlashMessages(uvclight.Viewlet):
     template = uvclight.get_template('flash.cpt', __file__)
 
     def update(self):
-        self.messages = [msg.message for msg in receive()]
+        self.messages = [msg for msg in receive()]
+
+
+class FavIcon(uvclight.Viewlet):
+    uvclight.viewletmanager(Headers)
+    template = get_template('favicon.cpt')
+
 
 
 @adapter(menus.IGlobalMenu, interface.Interface)
